@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safezone UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        #safezone-container {
+            position: fixed;
+            top: 80%;
+            left: 12px;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        #safezone-container.show {
+            opacity: 1;
+        }
+
+        .safezone-badge {
+            display: flex;
+            align-items: center;
+            background: rgba(8, 8, 8, 0.95);
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .safezone-icon {
+            width: 30px;
+            height: 30px;
+            background: rgb(8, 8, 8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .safezone-icon i {
+            color: #008000;
+            font-size: 16px;
+        }
+
+        .safezone-text {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="safezone-container">
+        <div class="safezone-badge">
+            <div class="safezone-icon">
+                <i class="fas fa-shield"></i>
+            </div>
+            <div class="safezone-text">Suojassa</div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('message', function(event) {
+            const data = event.data;
+            
+            if (data.action === 'showSafezone') {
+                const container = document.getElementById('safezone-container');
+                
+                if (data.show) {
+                    container.classList.add('show');
+                } else {
+                    container.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
