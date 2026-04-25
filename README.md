@@ -17,6 +17,7 @@ Easy to configure. Easy to install. No bloat.
 Supports multiple zones out of the box. Built on ox_lib for maximum performance.
 
 The icons color can be changed from NUI/nui.html line 68
+
 NUIs text can be changed from NUI/nui.html and line 86
 
 dependency: ox_lib
