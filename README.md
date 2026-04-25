@@ -16,10 +16,10 @@ Features:
 Easy to configure. Easy to install. No bloat.
 Supports multiple zones out of the box. Built on ox_lib for maximum performance.
 
+The icons color can be changed from NUI/nui.html line 68
+NUIs text can be changed from NUI/nui.html and line 86
+
 dependency: ox_lib
 
 <img width="288" height="181" alt="image" src="https://github.com/user-attachments/assets/d0dd83b3-7602-4029-88ca-27d31ee3427e" />
-
-NUIs text can be changed from NUI/nui.html and line 86
-
 <img width="660" height="580" alt="image" src="https://github.com/user-attachments/assets/0eafee51-c5ed-4d42-a664-b0cab8c2a7b6" />
