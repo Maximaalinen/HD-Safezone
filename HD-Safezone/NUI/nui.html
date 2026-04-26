@@ -6,6 +6,11 @@
     <title>Safezone UI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --safe-green: #2ECC71;
+            --safe-green-dark: #0A2616; 
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,87 +18,83 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             overflow: hidden;
+            background-color: #1A1A1A; 
         }
 
         #safezone-container {
             position: fixed;
-            top: 80%;
-            left: 12px;
+            top: 85%;
+            left: 20px;
             transform: translateY(-50%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             pointer-events: none;
         }
 
         #safezone-container.show {
             opacity: 1;
+            left: 30px;
         }
 
         .safezone-badge {
             display: flex;
             align-items: center;
-            background: rgba(8, 8, 8, 0.95);
-            padding: 10px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+            background: rgba(10, 38, 22, 0.9); 
+            padding: 8px 18px;
+            border-radius: 8px; 
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4), 
+                        inset 0 0 10px rgba(46, 204, 113, 0.1);
+            backdrop-filter: blur(5px);
         }
 
         .safezone-icon {
-            width: 30px;
-            height: 30px;
-            background: rgb(8, 8, 8);
+            width: 32px;
+            height: 32px;
+            background: rgba(46, 204, 113, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 12px;
             flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
         }
 
         .safezone-icon i {
-            color: #008000;
-            font-size: 16px;
+            color: var(--safe-green);
+            font-size: 14px;
+            /* for the glow in the icon so it looks better?! ?!  */
+            filter: drop-shadow(0 0 3px rgba(46, 204, 113, 0.5));
         }
 
         .safezone-text {
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
-    <div id="safezone-container">
+    <div id="safezone-container" class="show">
         <div class="safezone-badge">
             <div class="safezone-icon">
-                <i class="fas fa-shield"></i>
+                <i class="fas fa-shield-halved"></i>
             </div>
-            <div class="safezone-text">Suojassa</div>
+            <div class="safezone-text">On Safezone</div>
         </div>
     </div>
 
     <script>
         window.addEventListener('message', function(event) {
             const data = event.data;
-            
             if (data.action === 'showSafezone') {
                 const container = document.getElementById('safezone-container');
-                
                 if (data.show) {
                     container.classList.add('show');
                 } else {
