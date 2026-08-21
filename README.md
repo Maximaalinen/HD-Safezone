@@ -1,4 +1,4 @@
-# 🛡️ SafeZone Script | by High DEVELOPMENT / Maximaalinen
+# 🌿 HD-Safezone
 
 Tired of players getting killed or griefed in your server's peaceful areas? 
 This lightweight safezone resource has you covered.
@@ -26,3 +26,5 @@ https://discord.gg/jE3aWNMUPE
 
 <img width="288" height="181" alt="image" src="https://github.com/user-attachments/assets/d0dd83b3-7602-4029-88ca-27d31ee3427e" />
 <img width="660" height="580" alt="image" src="https://github.com/user-attachments/assets/0eafee51-c5ed-4d42-a664-b0cab8c2a7b6" />
+
+Script was made by Maximaalinen
