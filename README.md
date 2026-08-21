@@ -6,12 +6,12 @@ This lightweight safezone resource has you covered.
 
 Features:
 
-* Full invincibility inside zones — no damage, no ragdoll
+* Full invincibility inside zones, no damage, no ragdoll
 * Shooting disabled, but players can still draw and aim freely
 * No-collision with other players and vehicles
 * Clean on-screen notification when entering/leaving a zone
-* Visual zone markers drawn in-game
-* Simple config — just add coords, radius and a hex color code
+* Visual zone markers drawn in game
+* Simple config, just add coords, radius and a hex color code
 
 Easy to configure. Easy to install. No bloat.
 Supports multiple zones out of the box. Built on ox_lib for maximum performance.
